@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ZumanUI</string>
+    <string name="title_activity_mode">Mode</string>
+    <string name="ssh_ip_hint">Enter SSH Ip</string>
+    <string name="stream_ip_hint">Enter Stream ip:port</string>
+    <string name="manned_mode">Manned Mode</string>
+    <string name="autonomous_mode">Autonomous Mode</string>
+    <string name="developer_mode">Developer Mode</string>
+    <string name="go">Go</string>
+    <string name="ssh_username">username</string>
+    <string name="ssh_password">password</string>
+</resources>

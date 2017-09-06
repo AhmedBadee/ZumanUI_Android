@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context="com.spells.zumanui.Mode">
+
+        <EditText
+            android:id="@+id/ssh_ip"
+            android:text=""
+            android:hint="@string/ssh_ip_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="25sp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <EditText
+                android:id="@+id/ssh_username"
+                android:text=""
+                android:hint="@string/ssh_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textSize="25sp"/>
+
+            <EditText
+                android:id="@+id/ssh_password"
+                android:text=""
+                android:hint="@string/ssh_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textSize="25sp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/stream_ip"
+            android:text=""
+            android:hint="@string/stream_ip_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="25dp"
+            android:textSize="25sp" />
+
+        <RadioGroup
+            android:id="@+id/mode_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <RadioButton
+                android:id="@+id/mode_manned"
+                android:text="@string/manned_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/mode_auto"
+                android:text="@string/autonomous_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/mode_dev"
+                android:text="@string/developer_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/go"
+            android:text="@string/go"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="20dp"/>
+
+    </LinearLayout>
+</ScrollView>
