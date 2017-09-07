@@ -3,11 +3,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.spells.zumanui.Manned">
 
     <SurfaceView
         android:id="@+id/surfaceView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:scrollbars="horizontal|vertical">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start">
+
+                <EditText
+                    android:id="@+id/distance_txt"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/distance_txt"
+                    android:inputType="numberSigned" />
+
+                <Button
+                    android:id="@+id/distance_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/distance_txt"
+                    android:onClick="onDistanceBtnClick"
+                    android:text="@string/send_btn" />
+
+                <EditText
+                    android:id="@+id/degree_txt"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/distance_txt"
+                    android:layout_margin="10dp"
+                    android:hint="@string/degree_txt"
+                    android:inputType="numberSigned" />
+
+                <Button
+                    android:id="@+id/degree_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/distance_btn"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/degree_txt"
+                    android:onClick="onDegreeBtnClick"
+                    android:text="@string/send_btn" />
+
+                <Button
+                    android:id="@+id/light_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/degree_btn"
+                    android:layout_margin="10dp"
+                    android:onClick="onLightBtnClick"
+                    android:text="@string/switch_light_btn" />
+
+                <TextView
+                    android:id="@+id/camera_txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/distance_btn"
+                    android:padding="10dp"
+                    android:text="@string/camera_control_txt"
+                    android:textSize="20sp" />
+
+                <SeekBar
+                    android:id="@+id/yaw_seekbar"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/camera_txt_view"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/degree_btn"
+                    android:padding="10dp" />
+
+                <SeekBar
+                    android:id="@+id/pitch_seekbar"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/yaw_seekbar"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/degree_btn"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/yaw_txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/camera_txt_view"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/yaw_seekbar"
+                    android:padding="10dp"
+                    android:text="@string/yaw_txt"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/pitch_txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/yaw_seekbar"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/pitch_seekbar"
+                    android:padding="10dp"
+                    android:text="@string/pitch_txt"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/command_txt"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/light_btn"
+                    android:layout_margin="10dp"
+                    android:hint="@string/enter_command_txt" />
+
+                <Button
+                    android:id="@+id/command_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/light_btn"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/command_txt"
+                    android:onClick="onCommandBtnClick"
+                    android:text="@string/send_btn" />
+
+            </RelativeLayout>
+        </HorizontalScrollView>
+    </ScrollView>
 </LinearLayout>

@@ -15,6 +15,7 @@
         <EditText
             android:id="@+id/ssh_ip"
             android:text=""
+            android:inputType="text"
             android:hint="@string/ssh_ip_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,8 +30,8 @@
 
             <EditText
                 android:id="@+id/ssh_username"
-                android:text=""
                 android:hint="@string/ssh_username"
+                android:inputType="text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -39,7 +40,7 @@
 
             <EditText
                 android:id="@+id/ssh_password"
-                android:text=""
+                android:inputType="textPassword"
                 android:hint="@string/ssh_password"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -51,7 +52,7 @@
 
         <EditText
             android:id="@+id/stream_ip"
-            android:text=""
+            android:inputType="text"
             android:hint="@string/stream_ip_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

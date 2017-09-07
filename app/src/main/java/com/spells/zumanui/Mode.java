@@ -56,7 +56,6 @@ public class Mode extends AppCompatActivity implements RadioGroup.OnCheckedChang
         }
     }
 
-
     @Override
     public void onClick(View view) {
         Intent intent;

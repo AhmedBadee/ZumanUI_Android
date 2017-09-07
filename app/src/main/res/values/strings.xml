@@ -9,4 +9,12 @@
     <string name="go">Go</string>
     <string name="ssh_username">username</string>
     <string name="ssh_password">password</string>
+    <string name="distance_txt">Distance</string>
+    <string name="send_btn">Send</string>
+    <string name="degree_txt">Degree</string>
+    <string name="switch_light_btn">Switch Light</string>
+    <string name="camera_control_txt">Camera Control</string>
+    <string name="yaw_txt">Yaw</string>
+    <string name="pitch_txt">Pitch</string>
+    <string name="enter_command_txt">Enter Command</string>
 </resources>
