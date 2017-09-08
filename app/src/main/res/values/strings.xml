@@ -17,4 +17,13 @@
     <string name="yaw_txt">Yaw</string>
     <string name="pitch_txt">Pitch</string>
     <string name="enter_command_txt">Enter Command</string>
+
+    <string-array name="places_array">
+        <item>Choose Position…</item>
+        <item>Position1</item>
+        <item>Position2</item>
+        <item>Position3</item>
+        <item>Position4</item>
+    </string-array>
+
 </resources>

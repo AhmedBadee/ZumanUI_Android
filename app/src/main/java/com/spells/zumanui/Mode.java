@@ -42,16 +42,12 @@ public class Mode extends AppCompatActivity implements RadioGroup.OnCheckedChang
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, @IdRes int selectedMode) {
-
         switch (selectedMode) {
             case R.id.mode_manned:
                 mode = SelectedMode.MANNED_MODE;
                 break;
             case R.id.mode_auto:
                 mode = SelectedMode.AUTONOMOUS_MODE;
-                break;
-            case R.id.mode_dev:
-                mode = SelectedMode.DEVELOPER_MODE;
                 break;
         }
     }
@@ -74,13 +70,6 @@ public class Mode extends AppCompatActivity implements RadioGroup.OnCheckedChang
             startActivity(intent);
         } else if (mode == SelectedMode.AUTONOMOUS_MODE) {
             intent = new Intent(Mode.this, Autonomous.class);
-            intent.putExtra("SSH_IP", ssh_ip);
-            intent.putExtra("SSH_USERNAME", ssh_username);
-            intent.putExtra("SSH_PASSWORD", ssh_password);
-            intent.putExtra("STREAM_IP", stream_ip);
-            startActivity(intent);
-        } else if (mode == SelectedMode.DEVELOPER_MODE) {
-            intent = new Intent(Mode.this, Developer.class);
             intent.putExtra("SSH_IP", ssh_ip);
             intent.putExtra("SSH_USERNAME", ssh_username);
             intent.putExtra("SSH_PASSWORD", ssh_password);

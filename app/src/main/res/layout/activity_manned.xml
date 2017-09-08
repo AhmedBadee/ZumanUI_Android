@@ -92,6 +92,7 @@
                     android:layout_below="@id/camera_txt_view"
                     android:layout_margin="10dp"
                     android:layout_toEndOf="@id/degree_btn"
+                    android:max="170"
                     android:padding="10dp" />
 
                 <SeekBar
@@ -101,6 +102,7 @@
                     android:layout_below="@id/yaw_seekbar"
                     android:layout_margin="10dp"
                     android:layout_toEndOf="@id/degree_btn"
+                    android:max="170"
                     android:padding="10dp" />
 
                 <TextView

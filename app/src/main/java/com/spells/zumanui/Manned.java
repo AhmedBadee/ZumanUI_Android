@@ -70,7 +70,7 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
     }
 
     @Override
-    public void onPrepared(MediaPlayer mp) {
+    public void onPrepared(MediaPlayer mediaPlayer) {
         mediaPlayer.start();
     }
 
@@ -107,8 +107,8 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
 
     SeekBar.OnSeekBarChangeListener yawSeekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
-        public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-            yawTextView.setText("Yaw (" + seekBar.getProgress() + ")");
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+            yawTextView.setText("Yaw (" + progress + ")");
         }
 
         @Override
@@ -126,8 +126,8 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
 
     SeekBar.OnSeekBarChangeListener pitchSeekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
-        public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-            pitchTextView.setText("Pitch (" + seekBar.getProgress() + ")");
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+            pitchTextView.setText("Pitch (" + progress + ")");
         }
 
         @Override

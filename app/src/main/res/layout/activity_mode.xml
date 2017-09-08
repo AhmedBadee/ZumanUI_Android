@@ -82,12 +82,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp" />
 
-            <RadioButton
-                android:id="@+id/mode_dev"
-                android:text="@string/developer_mode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"/>
         </RadioGroup>
 
         <Button

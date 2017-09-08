@@ -3,6 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context="com.spells.zumanui.Autonomous">
+
+    <Spinner
+        android:id="@+id/positions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="15dp" />
+
+    <Button
+        android:id="@+id/auto_go_btn"
+        android:text="@string/go"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="15dp" />
 
 </LinearLayout>
