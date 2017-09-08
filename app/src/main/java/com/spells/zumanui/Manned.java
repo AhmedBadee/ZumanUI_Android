@@ -38,6 +38,9 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
 
     private Boolean lightState = false;
 
+    private int yawValue;
+    private int pitchValue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +112,7 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
             yawTextView.setText("Yaw (" + progress + ")");
+            yawValue = progress;
         }
 
         @Override
@@ -118,8 +122,7 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
-            // TODO: command here
-            String command = "";
+            String command = "rostopic pub hw_low zuman_msgs/Instruction -1 \"set_cam\" " + yawValue + " " + pitchValue;
             new ExecuteCommandTask(Manned.this, command).execute();
         }
     };
@@ -128,6 +131,7 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
             pitchTextView.setText("Pitch (" + progress + ")");
+            pitchValue = progress;
         }
 
         @Override
@@ -137,8 +141,7 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
-            // TODO: command here
-            String command = "";
+            String command = "rostopic pub hw_low zuman_msgs/Instruction -1 \"set_cam\" " + yawValue + " " + pitchValue;
             new ExecuteCommandTask(Manned.this, command).execute();
         }
     };
@@ -146,28 +149,24 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
     public void onDistanceBtnClick(View view) {
         String distance = distanceText.getText().toString();
 
-        // TODO: command here
-        String command = "";
+        String command = "rostopic pub hw_low zuman_msgs/Instruction -1 \"map_move\" " + distance + " 0";
         new ExecuteCommandTask(Manned.this, command).execute();
     }
 
     public void onDegreeBtnClick(View view) {
         String degree = degreeText.getText().toString();
 
-        // TODO: command here
-        String command = "";
+        String command = "rostopic pub hw_low zuman_msgs/Instruction -1 \"map_rotate\" " + degree + " 0";
         new ExecuteCommandTask(Manned.this, command).execute();
     }
 
     public void onLightBtnClick(View view) {
         if (lightState) { // Switch On
-            // TODO: command here
-            String command = "";
+            String command = "rostopic pub hw_low zuman_msgs/Instruction -1 \"switch_on_light\" 0 0";
             new ExecuteCommandTask(Manned.this, command).execute();
             lightState = !lightState;
         } else {          // Switch off
-            // TODO: command here
-            String command = "";
+            String command = "rostopic pub hw_low zuman_msgs/Instruction -1 \"switch_off_light\" 0 0";
             new ExecuteCommandTask(Manned.this, command).execute();
             lightState = !lightState;
         }
@@ -206,6 +205,14 @@ public class Manned extends AppCompatActivity implements MediaPlayer.OnPreparedL
         @Override
         protected Boolean doInBackground(Void... voids) {
             sshApplication = new SSHApplication(Manned.this, ssh_ip, ssh_username, ssh_password);
+
+            if (sshApplication.isConnected()) {
+                sshApplication.executeCommand("roscore");
+                sshApplication.executeCommand("sudo chown grad /dev/ttyUSB0 /dev/ttyUSB1");
+                sshApplication.executeCommand("123456789");
+                sshApplication.executeCommand("rosrun rosserial_python serial_node.py /dev/ttyUSB0 __name:=\"manipulator\"");
+                sshApplication.executeCommand("rosrun rosserial_python serial_node.py /dev/ttyUSB1 __name:=\"camera\"");
+            }
 
             return sshApplication.isConnected();
         }
