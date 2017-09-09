@@ -93,7 +93,8 @@
                     android:layout_margin="10dp"
                     android:layout_toEndOf="@id/degree_btn"
                     android:max="170"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:progress="80" />
 
                 <SeekBar
                     android:id="@+id/pitch_seekbar"
@@ -103,7 +104,8 @@
                     android:layout_margin="10dp"
                     android:layout_toEndOf="@id/degree_btn"
                     android:max="170"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:progress="80"/>
 
                 <TextView
                     android:id="@+id/yaw_txt_view"
@@ -144,6 +146,15 @@
                     android:layout_toEndOf="@id/command_txt"
                     android:onClick="onCommandBtnClick"
                     android:text="@string/send_btn" />
+
+                <CheckBox
+                    android:id="@+id/manned_check"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/manned_check"
+                    android:layout_alignTop="@+id/camera_txt_view"
+                    android:layout_toEndOf="@+id/yaw_seekbar"
+                    android:layout_margin="10dp"/>
 
             </RelativeLayout>
         </HorizontalScrollView>

@@ -5,13 +5,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.util.Log;
 
-public class SSHApplication {
+class SSHApplication {
 
     private boolean connectionState = false;
 
     private SSHConnection sshConnection;
 
-    public SSHApplication(Context context, String host, String username, String password) {
+    SSHApplication(Context context, String host, String username, String password) {
 
         Log.e("Connection", "Connecting");
 
@@ -54,13 +54,11 @@ public class SSHApplication {
         }
     }
 
-    public boolean isConnected() {
+    boolean isConnected() {
         return connectionState;
     }
 
-    public void executeCommand(String command) {
-
-        String output;
+    void executeCommand(String command) {
 
         sshConnection.sendCommand(command + "\n");
 
@@ -71,7 +69,7 @@ public class SSHApplication {
         }
     }
 
-    public String readOutput(String command) {
+    String readOutput(String command) {
 
         String output;
 
@@ -86,7 +84,7 @@ public class SSHApplication {
         return output;
     }
 
-    public void exit() {
+    void exit() {
         sshConnection.close();
     }
 }

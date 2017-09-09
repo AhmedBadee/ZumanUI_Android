@@ -74,6 +74,11 @@ public class Autonomous extends AppCompatActivity {
         protected Boolean doInBackground(Void... voids) {
             sshApplication = new SSHApplication(Autonomous.this, ssh_ip, ssh_username, ssh_password);
 
+            if (sshApplication.isConnected()) {
+                sshApplication.executeCommand("roscore &");
+                sshApplication.executeCommand("rostopic pub hw_low zuman_msgs/Instruction -1 \"end_manned\" 0 0 & \n");
+            }
+
             return sshApplication.isConnected();
         }
 

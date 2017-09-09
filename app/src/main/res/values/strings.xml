@@ -17,6 +17,7 @@
     <string name="yaw_txt">Yaw</string>
     <string name="pitch_txt">Pitch</string>
     <string name="enter_command_txt">Enter Command</string>
+    <string name="manned_check">Manned</string>
 
     <string-array name="places_array">
         <item>Choose Position…</item>
